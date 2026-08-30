@@ -1,0 +1,6 @@
+TASK 2: RESTAURANT PERFORMANCE ANALYSER
+restaurant_name  mean_order_value  mean_delivery_time  mean_rating
+      Pizza Hub            572.49               29.68         4.37
+   Sweet Treats            555.60               32.22         4.24
+    Spice Route            553.76               30.95         4.19
+    Urban Bites            294.15               29.70         4.16

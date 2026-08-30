@@ -1,0 +1,30 @@
+=== Cuisine Summary ===
+     Cuisine  Total_Revenue  Average_DeliveryTime  Order_Count
+     Biryani       23836.25                 44.89           28
+     Chinese       21953.21                 42.18           29
+     Italian       16262.99                 38.33           21
+North Indian       18431.94                 40.38           25
+South Indian       15012.25                 42.82           17
+
+=== IQR / Invalid Delivery-Time Check ===
+Q1=33.00, Q3=52.00, IQR=19.00, Lower=4.50, Upper=80.50
+Invalid negative DeliveryTime rows fixed: 2
+
+=== Correlation Matrix ===
+              Revenue  DeliveryTime  Rating
+Revenue         1.000         0.068  -0.040
+DeliveryTime    0.068         1.000   0.068
+Rating         -0.040         0.068   1.000
+
+Saved: food_delivery_summary.xlsx
+
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.

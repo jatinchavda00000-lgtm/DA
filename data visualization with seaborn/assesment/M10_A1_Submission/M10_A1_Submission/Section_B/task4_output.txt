@@ -1,0 +1,10 @@
+TASK 4: FULL EDA PIPELINE
+Rows generated: 200
+Nulls after median fill: 0
+Saved: correlation_heatmap.png (DPI 200)
+Saved: pairplot.png (DPI 200)
+Speed bands:
+speed_band
+Slow      67
+Normal    66
+Fast      67

@@ -1,0 +1,18 @@
+TASK 1: DELIVERY FEE ARRAY CALCULATOR
+Orders with delivery fee > Rs 60:
+[[14.31 91.55]
+ [11.25 76.24]
+ [9.38 66.91]
+ [13.13 85.63]
+ [9.42 67.08]
+ [10.91 74.57]
+ [14.58 92.89]
+ [12.65 83.27]
+ [8.35 61.73]
+ [9.57 67.83]]
+
+Complete fee statistics:
+Minimum: Rs 26.44
+Maximum: Rs 92.89
+Mean: Rs 55.86
+Standard deviation: Rs 19.56

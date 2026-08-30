@@ -1,0 +1,3 @@
+PROMPT USED WITH AI
+
+Write a Python 3 program for a Data Analytics assessment using NumPy, Pandas, Matplotlib, and Seaborn. Generate a synthetic food delivery dataset with at least 5 numeric columns and one categorical column named cuisine_type. Load the data into a Pandas DataFrame. Produce a Seaborn pairplot of all numeric columns, coloured by cuisine_type, and save it as a PNG. Compute the Pearson correlation matrix and display it as a Seaborn heatmap with annotated cell values and a diverging colour palette. Export the heatmap as a separate PNG at DPI 200 with a descriptive filename. Keep the code self-contained and runnable.

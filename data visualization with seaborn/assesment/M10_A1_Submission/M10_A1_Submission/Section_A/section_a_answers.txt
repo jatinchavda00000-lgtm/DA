@@ -1,0 +1,34 @@
+SECTION A — CONCEPT APPLICATION
+
+S1
+For 50,000 distances, NumPy vectorisation is technically superior because the calculation is performed on the whole array using optimized low-level operations instead of repeatedly executing Python-level loop code. This normally reduces Python interpreter overhead, keeps the code compact, and uses NumPy's efficient array implementation. With a scalar fee rate such as Rs 5 per km, broadcasting lets NumPy treat that single scalar as compatible with every element of the distance array, so one expression such as fee = 20 + 5 * distances computes all fees without manually copying the scalar into a 50,000-element array. A Python loop could still be necessary when each iteration requires genuinely irregular Python-side logic or interaction, such as calling a custom API/service or maintaining state that depends on several previous iterations and cannot be expressed cleanly as an array operation.
+
+S2
+Pandas groupby() plus agg() is preferable because the task is a standard grouped aggregation: the DataFrame can be split by restaurant and all required summary statistics can be computed in one vectorized Pandas operation rather than repeatedly filtering the full DataFrame in a Python loop. The method chain is:
+
+result = (df.groupby('restaurant_name')
+            .agg(mean_order_value=('order_value', 'mean'),
+                 mean_delivery_time=('delivery_time_mins', 'mean'),
+                 mean_rating=('rating', 'mean')))
+
+The resulting DataFrame is indexed by restaurant_name because the grouping key becomes the group index by default. Each row therefore represents one restaurant and the columns contain the three requested means.
+
+S3
+(a) Total orders per month: a line chart is most appropriate because the month variable is ordered in time and the objective is to show month-to-month trend and changes in volume.
+(b) Proportion of orders by cuisine type: a pie chart can communicate part-to-whole composition for the four cuisine categories. A bar chart is also defensible, especially if precise comparison is more important, but a pie chart directly emphasizes proportions.
+(c) Distribution of delivery times: a histogram is appropriate because delivery time is a numeric variable and the goal is to see its frequency distribution, including concentration, spread, and possible skew/outliers.
+
+For a single figure, plt.subplots() could be configured as fig, axes = plt.subplots(1, 3, figsize=(18, 5)), giving three side-by-side axes. A shared x-axis would not be appropriate because the three charts use different x variables and scales: months, cuisine categories, and delivery-time values. Sharing x across these unrelated variables would reduce clarity and would not provide a meaningful common scale.
+
+S4
+First find the index of the maximum daily order volume, for example max_idx = np.argmax(order_volume), then read the corresponding day and volume. Use plt.annotate() with a text label such as f'Day {day}: {volume} orders' and an xy location at the peak point. A second parameter, xytext=(...), specifies where the annotation text should be placed, while arrowprops=dict(arrowstyle='->') controls the arrow drawn from the text to the peak. Other useful parameters include ha/va for text alignment and fontsize for label size. The result programmatically identifies the highest-value day rather than requiring the stakeholder to inspect all 90 points manually.
+
+S5
+For this dataset, I would recommend sns.boxplot() because the ratings are on a discrete 1–5 scale and there are only three categories. A boxplot gives a compact comparison of median, quartile spread, and potential outliers across the categories, which directly supports the manager's question about extreme observations. With 10,000 rows, the sample is large enough that a boxplot remains stable and readable even when many observations are present, whereas a violin plot's estimated density can be visually awkward on a strongly discrete scale because the distribution consists only of five possible values.
+
+A violin plot becomes preferable when the numeric variable is continuous and the analyst wants to compare the overall distribution shape or multiple modes between groups. For example, if the variable were continuous delivery time across the same three categories, a violin plot would show density structure that a boxplot would compress.
+
+S6
+I would first select the eight numeric features and compute Pearson correlations with df.corr(numeric_only=True). Then I would plot the matrix with Seaborn, for example sns.heatmap(corr, annot=True, cmap='coolwarm', vmin=-1, vmax=1). The colour scale represents correlation strength and direction: values near +1 indicate a strong positive linear relationship, values near -1 a strong negative relationship, and values near 0 little linear association. A specific cell, such as 0.92 for order_value versus distance_km, means that those two variables have a strong positive Pearson correlation in the dataset.
+
+I would flag an absolute correlation around |r| >= 0.8 as a potential multicollinearity problem. This is a conventional screening threshold because correlations at or above roughly 0.8 indicate that two predictors share a large amount of linear information, which can make regression coefficients unstable and inflate standard errors. The threshold is a practical warning rule rather than a universal law; final model diagnostics such as VIF should also be considered.

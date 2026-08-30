@@ -1,0 +1,6 @@
+TEST & DEBUG NOTE
+
+1. The original solution saved the pairplot with a plain plt.savefig() call. Because Seaborn pairplot returns its own FacetGrid figure, I changed this to g = sns.pairplot(...) followed by g.savefig(...), which explicitly saves the correct pairplot figure.
+2. The original solution used df.corr() directly. I changed it to select only numeric columns before calculating Pearson correlation, which avoids failures or unintended handling when the categorical cuisine_type column is included.
+3. I also added DPI 200 and tight bounding boxes to the saved figures so the submission satisfies the assessment's image-export requirement and keeps labels readable.
+4. The corrected version was run successfully and produced separate pairplot and heatmap PNG files.

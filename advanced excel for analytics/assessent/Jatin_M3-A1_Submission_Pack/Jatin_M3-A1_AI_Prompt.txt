@@ -1,0 +1,10 @@
+Write a Python 3 pandas script for a food-delivery analytics assessment.
+Requirements:
+1) Read a CSV file of food delivery orders.
+2) Produce a summary table grouped by Cuisine showing Total Revenue, Average DeliveryTime, and Order Count.
+3) Add PerformanceFlag: DeliveryTime > 60 => "Delayed"; otherwise "On Time".
+4) Save the cleaned/enriched result as food_delivery_summary.xlsx using pandas ExcelWriter.
+5) The script must run without error when some Revenue cells are blank and at least one DeliveryTime value is negative.
+6) Print a clean, labelled summary table to the console.
+7) Also print a correlation matrix for Revenue, DeliveryTime, and Rating.
+8) Include at least 3 inline code comments explaining business meaning of correlation coefficients and the treatment of invalid delivery times.

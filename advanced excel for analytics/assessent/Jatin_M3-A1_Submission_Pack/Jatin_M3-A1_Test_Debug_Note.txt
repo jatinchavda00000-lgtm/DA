@@ -1,0 +1,5 @@
+Testing note (3–4 lines)
+The AI version handled blank Revenue values through pandas numeric coercion, but it left the -5 DeliveryTime value in the analysis and classified it as On Time.
+The failing input was the negative DeliveryTime = -5, which is impossible operationally and can distort the mean/correlation.
+I corrected the script by flagging negative DeliveryTime values as invalid, replacing them with missing values for analysis, and making the PerformanceFlag show "Invalid / Missing".
+I also added an explicit IQR summary so outlier detection is visible in the console output.

@@ -1,0 +1,62 @@
+FOOD DELIVERY ANALYTICS CONSOLE
+Dataset ready: 250 rows | numeric nulls filled before analysis
+
+1. Summary Statistics
+2. Distribution Analysis
+3. Correlation Heatmap
+4. Restaurant Performance Report
+5. Exit
+Enter your choice: 
+SUMMARY STATISTICS
+                      mean     std     min     max
+order_value         514.04  231.64  100.46  898.81
+distance_km          10.62    5.19    1.30   19.93
+delivery_time_mins   30.71    7.16   12.56   55.27
+rating                2.93    1.14    1.01    5.00
+Overall mean order value (NumPy): Rs 514.04
+
+1. Summary Statistics
+2. Distribution Analysis
+3. Correlation Heatmap
+4. Restaurant Performance Report
+5. Exit
+Enter your choice: Saved distribution_analysis.png
+
+1. Summary Statistics
+2. Distribution Analysis
+3. Correlation Heatmap
+4. Restaurant Performance Report
+5. Exit
+Enter your choice: Saved correlation_heatmap_capstone.png
+
+1. Summary Statistics
+2. Distribution Analysis
+3. Correlation Heatmap
+4. Restaurant Performance Report
+5. Exit
+Enter your choice: 
+RESTAURANT PERFORMANCE REPORT
+                 mean_order_value  mean_delivery_time  mean_rating  order_count
+restaurant_name                                                                
+Urban Bites                507.37               31.39         3.04           56
+Pizza Hub                  540.66               30.00         2.99           52
+Sweet Treats               525.43               32.05         2.95           52
+Dragon Bowl                476.50               29.43         2.90           36
+Spice Route                509.37               30.26         2.76           54
+
+1. Summary Statistics
+2. Distribution Analysis
+3. Correlation Heatmap
+4. Restaurant Performance Report
+5. Exit
+Enter your choice: 
+FINAL SUMMARY REPORT
+Top 3 restaurants by mean rating:
+- Urban Bites: 3.04
+- Pizza Hub: 2.99
+- Sweet Treats: 2.95
+Highest absolute Pearson correlation pair: discount_pct vs driver_experience_years (r=0.154)
+Overall delivery-time mean: 30.71 minutes
+Overall delivery-time standard deviation: 7.14 minutes
+
+Program exited successfully.

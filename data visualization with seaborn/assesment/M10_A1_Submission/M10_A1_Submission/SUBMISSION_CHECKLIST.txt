@@ -1,0 +1,24 @@
+M10-A1 SUBMISSION CHECKLIST
+
+Section A: Concept answers -> Section_A/section_a_answers.txt
+
+Section B:
+- Task 1 source + output screenshot
+- Task 2 source + output screenshot
+- Task 3 source + console screenshot + dashboard PNG
+- Task 4 source + console screenshot + heatmap PNG + pairplot PNG
+
+Section C:
+- Menu-driven source
+- Console screenshot
+- Distribution chart PNG
+- Correlation heatmap PNG
+
+Section D:
+- Exact prompt
+- AI original code
+- Corrected code
+- Test/debug note
+- Corrected pairplot and heatmap PNGs
+
+All generated chart PNGs are at DPI >= 150 where required.
